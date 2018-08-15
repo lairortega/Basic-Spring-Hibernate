@@ -1,6 +1,6 @@
 package lair.ortega.model.response;
 
-public class User {
+public class UserResponse {
 	
 	private Integer id;
 	private String username;
@@ -24,16 +24,16 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public User() {}
+	public UserResponse() {}
 	
-	public User(lair.ortega.model.db.User user) {
+	public UserResponse(lair.ortega.model.db.UserEntity user) {
 		this.id = user.getId();
 		this.username = user.getUsername();
 		this.password = user.getPassword();
 	}
 	
-	public lair.ortega.model.db.User toDB() {
-		lair.ortega.model.db.User user = new lair.ortega.model.db.User();
+	public lair.ortega.model.db.UserEntity toDB() {
+		lair.ortega.model.db.UserEntity user = new lair.ortega.model.db.UserEntity();
 		
 		user.setId(this.getId());
 		user.setUsername(this.getUsername());
