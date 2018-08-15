@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 import java.util.UUID;
@@ -64,7 +65,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación.");
 		}
 	}
 	
@@ -107,7 +108,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -124,7 +125,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como exitosa
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -151,7 +152,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -165,7 +166,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con valores no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -193,7 +194,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -219,7 +220,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -244,7 +245,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -270,7 +271,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -295,7 +296,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -320,7 +321,7 @@ public class UserLogicTest {
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Actualizó registro con datos no válidos.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -334,16 +335,13 @@ public class UserLogicTest {
 	@Test
 	@Order(value = 11)
 	public void testDeleteNoneExistingUser() {
-		UserResponse user = null;
 		try {
-			user = logic.find(-1);
-			user.setPassword(null);
-			logic.update(user);
+			logic.delete(-1);
 			/*
 			 * Si ejecuta todas las instrucciones
 			 * la prueba falló,algo salió mal
 			 */
-			assertTrue(false);
+			fail("Eliminó usuario no existente.");
 
 			this.clearDatabase();
 		} catch (ValidationException e) {
@@ -369,7 +367,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -391,7 +389,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -413,7 +411,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -432,7 +430,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(false);
+			fail("Error de validación");
 		}
 	}
 	
@@ -449,7 +447,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -466,7 +464,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -485,7 +483,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -502,7 +500,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -519,7 +517,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -538,7 +536,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 	
@@ -563,7 +561,7 @@ public class UserLogicTest {
 			/*
 			 * Si entra al catch marca la prueba como fallida
 			 */
-			assertTrue(true);
+			fail("Error de validación");
 		}
 	}
 }
